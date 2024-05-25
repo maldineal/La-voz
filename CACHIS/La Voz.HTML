@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <title>La voz </title>
+
+
+   <link rel= "shortcut icon"  type= "imagen/x-icon" href="imagenes/bandera.jpg">
+  <link rel="stylesheet" href="styles.css"><style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .navbar {
+
+       /* cambia el color al fondo del inicio 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .navbar a:hover {
+
+       /* cambia de color al cursor al pocicionar en inicio producto, noticia      000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+        background-color: white;
+        color: black;
+    }
+
+    .navbar a.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .navbar img {
+        float: left;
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin: 5px 15px 5px 5px;
+    }
+
+    .productos-populares {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .productos-populares h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .ver-mas {
+        float: right;
+        margin-top: -40px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .productos {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .producto {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 23%;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .producto img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .producto h3 {
+        font-size: 18px;
+        margin: 10px 0;
+        font-weight: normal;
+    }
+
+    .producto p {
+        margin: 5px 0;
+        color: #777;
+    }
+
+    .rating-precio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .rating {
+        color: #FFD700;
+        font-size: 16px;
+    }
+
+    .precio {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .ventas {
+        font-size: 14px;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .botones {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .botones button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .botones .demo {
+        background-color: #28a745;
+    }
+
+    .botones button:hover {
+        background-color: #0056b3;
+    }
+
+    .botones .demo:hover {
+        background-color: #218838;
+    }
+
+
+    .slider{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+
+/* Con esto podemos modificar el tamaño de ancho y largo de las imagenes grande portada */
+.slider {
+  position: relative;
+  width:301%;
+  height: 95vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slides img {
+  width: 100vw;
+  height: 95vh;
+  object-fit: cover;
+}
+
+.navigation {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation button {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.navigation button.active {
+  background: #333;
+}
+
+.navigation button:hover {
+  background: #777;
+}
+
+
+
+
+
+
+
+
+    /* Estilos para la sección de bienvenida edicion 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0px 580px;
+        text-align: center;
+        font-size: 5px;
+    }
+
+
+
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .welcome-section {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .welcome-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    .welcome-section p {
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    /* Estilos para las secciones */
+    .section {
+        margin: 40px 0;
+    }
+
+    .section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .section p {
+        font-size: 1.1em;
+        color: #666;
+    }
+
+    .section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .section ul li {
+        background: #fff;
+        margin-bottom: 10px;
+
+     /* anchea los cuadros de letras 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+
+    /* Estilos para pie de pagina00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+         padding: 0px 500px;
+         display: block;
+         font-size: 11px;
+
+    }
+
+    
+    </style>
+</head>
+
+<body><div class="navbar">
+        <a class="active" href="file:///C:/Users/Maldine/Desktop/CACHIS/La%20Voz.HTML">Inicio</a>
+        <a href="file:///C:/Users/Maldine/Desktop/CACHIS/MUNICIPIO%20DE%20SANTA%20CRUZ.HTML#home">Municipios de Santa cruz</a>
+        <a href="#contacto">Contacto</a>
+        <a href="file:///C:/Users/Maldine/Desktop/CACHIS/REGISTRO.HTML?#">Registro</a>
+    </div>
+
+
+
+ <div class="slider">
+  <div class="slides">
+   
+    <img src="imagenes/municipiodecuatro.jpg" alt="Imagen 1">
+    <img src="imagenes/bolivia1.jpg" alt="Imagen 2">
+    <img src="imagenes/municipiodecuatro.jpg" alt="Imagen 3">
+ 
+ </div>
+
+   <div class="navigation">
+      <button class="nav-btn"></button>
+      <button class="nav-btn"></button>
+      <button class="nav-btn"></button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const navButtons = document.querySelectorAll('.nav-btn');
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function updateSlide(index) {
+      slides.style.transform = `translateX(${-index * 100}vw)`;
+      navButtons.forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+      });
+    }
+
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlide(currentIndex);
+    }
+
+    navButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlide(currentIndex);
+      });
+    });
+
+    // Inicializa el primer slide como activo
+    updateSlide(currentIndex);
+
+    // Cambia de imagen automáticamente cada 3 segundos00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    setInterval(showNextSlide, 3000);
+  </script>
+
+    <div class="productos-populares">
+
+        <h2>MUNICIPIOS DE SANTA CRUZ </h2>
+
+
+        <a href="#" class="ver-mas">Ver más</a>
+
+<!-- MUNICIPIO DE CUATRO CAÑADAS -->
+        <div class="productos">
+            <div class="producto">
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/CUATRO%20CA%C3%91ADAS.html">
+                    <a href="file:///C:/Users/Maldine/Desktop/CACHIS/CUATRO%20CA%C3%91ADAS.html">
+                        <img src="https://gamcuatrocanadas.gob.bo/wp-content/uploads/2023/05/image-1-scaled.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+                    </a>
+                      
+                <br><br><br><br>
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/CUATRO%20CA%C3%91ADAS.html" style="font-family: Arial; text-decoration: none; color: black;"
+                >Municipio de Cuatro Cañadas</a>
+                <p>Santa Cruz</p>
+                <div class="rating-precio">
+                <div class="rating">★★★★★</div>
+                <div class="precio">10 Bs</div>
+                </div>
+                <p class="ventas">2705 Ventas</p> 
+                <div class="botones">
+                    <button class="detalles">
+                        <a href="https://www.facebook.com/groups/926020941153365/" style="color: white; text-decoration: none; font-family: Arial;">facebook</a>
+                    </button>
+                   <button class="demo">
+                   <a href="https://chat.whatsapp.com/JiFmLcabtxJKrAoAJDqlqW" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+                   </button>
+                </div>
+            </div>
+            
+<!-- MUNICIPIO DE PAILON -->
+            <div class="producto">
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/PAILON.HTML">
+                <img src="https://www.feelpublicidad.com/ppas/images/edificiogobiernopailon.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+                </a>  
+                <br><br><br><br>
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/PAILON.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+                >Municipio de Pailon</a>
+                <p>Santa cruz</p>
+                <div class="rating-precio">
+                    <div class="rating">★★★★★</div>
+                    <div class="precio">10 Bs</div>
+                </div>
+                <p class="ventas">2195 Ventas</p>
+                <div class="botones">
+                    <button class="detalles">
+                        <a href="https://www.facebook.com/groups/162010867765662/" style="color: white; text-decoration: none; font-family: Arial;">facebook</a>
+                    </button>
+                    <button class="demo">
+                    <a href="https://chat.whatsapp.com/JDtz9TGESdT0fVfBFmzZBe" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+                    </button>
+                </div>
+            </div>
+
+<!-- MUNICIPIO DE COTOCA -->
+            <div class="producto">
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/COTOCA.HTML">
+                   <img src="https://www.geocities.ws/virgen_de_cotoca/fotos/cotoca_102.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+                </a>  
+                <br><br><br><br>
+                <a href="file:///C:/Users/Maldine/Desktop/CACHIS/COTOCA.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+                >Municipio  de  Cotoca</a>
+                <p>Santa cruz</p>
+                <div class="rating-precio">
+                    <div class="rating">★★★★★</div>
+                    <div class="precio">10 Bs</div>
+                </div>
+                <p class="ventas">1405 Ventas</p>
+                <div class="botones">
+                    <button class="detalles">
+                        <a href="https://www.facebook.com/groups/427919008174601/ " style="color: white; text-decoration: none; font-family: Arial;">facebook</a> 
+                    </button>
+                    <button class="demo">
+                    <a href="https://chat.whatsapp.com/EQxssJ9mC8DAZC59rIxha4" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+                    </button>
+                </div>
+            </div>
+            
+<!-- MUNICIPIO DE San Julian -->
+       <div class="producto">
+        <a href="file:///C:/Users/Maldine/Desktop/CACHIS/SAN%20JULIAN.HTML">
+        <img src="https://3.bp.blogspot.com/-YTQ2I22km2w/Td53I66QlPI/AAAAAAAAAF4/EQcjNAY6r24/s1600/22092010170000img0061.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+        </a>
+        <br><br><br><br>
+        <a href="file:///C:/Users/Maldine/Desktop/CACHIS/SAN%20JULIAN.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+        >Municipio de San Julian</a>
+       <p>Santa Cruz</p>
+       <div class="rating-precio">
+       <div class="rating">★★★★★</div>
+       <div class="precio">10 Bs</div>
+       </div>
+       <p class="ventas">3857 Ventas</p>
+       <div class="botones">
+       <button class="detalles">facebook</button>
+       <button class="demo">
+       <a href="https://chat.whatsapp.com/KzSp57TmUrm6LWdwdGmgV7" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+       </button>
+       </div>
+       </div>
+
+       <!-- MUNICIPIO DE Mineros -->
+       <div class="producto">
+       <a href="file:///C:/Users/Maldine/Desktop/CACHIS/MINEROS.HTML">
+             <img src="https://eju.tv/wp-content/uploads/2021/05/img_60a2df04418fb.png" alt="Producto 1" style="width: 245px; height: 200px;">
+       </a>
+       <br><br><br><br>
+       <a href="file:///C:/Users/Maldine/Desktop/CACHIS/MINEROS.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+        >Municipio de Mineros</a>
+       <p>Santa Cruz</p>
+       <div class="rating-precio">
+       <div class="rating">★★★★★</div>
+       <div class="precio">10 Bs</div>
+       </div>
+       <p class="ventas">3857 Ventas</p>
+       <div class="botones">
+       <button class="detalles">
+        <a href=" https://www.facebook.com/groups/879452979288432/" style="color: white; text-decoration: none; font-family: Arial;">facebook</a>        
+       </button>
+       <button class="demo">
+       <a href="https://chat.whatsapp.com/BfbarndSizk3sIuuunZkAz" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+       </button>
+       </div>
+       </div>
+
+      
+
+
+
+
+
+ <!-- MUNICIPIO DE MONTERO -->
+  <div class="producto">
+<a href="file:///C:/Users/Maldine/Desktop/CACHIS/MINEROS.HTML">
+     <img src="https://i0.wp.com/monteronoticias.com/wp-content/uploads/2023/08/Bandera-de-Montero.jpg?fit=768%2C437&ssl=1" alt="Producto 1" style="width: 245px; height: 200px;">
+</a>
+<br><br><br><br>      
+<a href="file:///C:/Users/Maldine/Desktop/CACHIS/MINEROS.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+>Municipio de Montero</a>
+<p>Santa Cruz</p>
+    <div class="rating-precio">
+    <div class="rating">★★★★★</div>
+    <div class="precio">10 Bs</div>
+    </div>
+       <p class="ventas">3857 Ventas</p>
+       <div class="botones">
+       <button class="detalles">
+        <a href=" https://www.facebook.com/groups/514576786166309/" style="color: white; text-decoration: none; font-family: Arial;">facebook</a>
+
+       </button>
+       <button class="demo">
+       <a href="https://chat.whatsapp.com/JI9s7Y8m4vAAGL6YDv3Iob" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+       </button>
+       </div>
+       </div>
+      
+<!-- MUNICIPIO DE GUARAYOS -->
+  <div class="producto">
+    <a href="file:///C:/Users/Maldine/Desktop/CACHIS/GUARAYOS.HTML">
+        <img src="https://amdecruz.com/images/municipios/asencionguarayos/05.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+   </a>
+   <br><br><br><br>    
+   <a href="file:///C:/Users/Maldine/Desktop/CACHIS/GUARAYOS.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+   >Municipio de Guarayos</a>    
+       <p>Santa Cruz</p>
+       <div class="rating-precio">
+       <div class="rating">★★★★★</div>
+       <div class="precio">10 Bs</div>
+       </div>
+
+       <p class="ventas">3857 Ventas</p>
+       <div class="botones">
+       <button class="detalles">
+        <a href=" https://www.facebook.com/groups/783813542551797/" style="color: white; text-decoration: none; font-family: Arial;">facebook</a>
+       </button>
+       <button class="demo">
+       <a href="https://chat.whatsapp.com/FznLLcDra9fIrXflEiwZZG" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+       </button>
+       </div>
+       </div>
+      
+<!-- MUNICIPIO DE YAPACANI -->
+  <div class="producto">
+    <a href="file:///C:/Users/Maldine/Desktop/CACHIS/YAPACANI.HTML">
+        <img src="https://www.amdecruz.com/images/municipios/Yapacani/1.jpg" alt="Producto 1" style="width: 245px; height: 200px;">
+   </a>
+   <br><br><br><br>    
+   <a href="file:///C:/Users/Maldine/Desktop/CACHIS/YAPACANI.HTML" style="font-family: Arial; text-decoration: none; color: black;"
+   >Municipio de Yapacani</a>  
+       <p>Santa Cruz</p>
+       <div class="rating-precio">
+       <div class="rating">★★★★★</div>
+       <div class="precio">10 Bs</div>
+       </div>
+
+       <p class="ventas">3857 Ventas</p>
+       <div class="botones">
+       <button class="detalles">facebook</button>
+       <button class="demo">
+       <a href="https://chat.whatsapp.com/GHBKriTy0UZLIfnzliQnRi" style="color: white; text-decoration: none; font-family: Arial;">WhatsApp</a>
+       </button>
+       </div>
+       </div>
+
+
+    <header>
+
+        <h1> LA VOZ</h1>
+     
+    </header>
+
+
+
+
+
+    <div class="container">
+        <div class="welcome-section">
+            <h1>¡Bienvenidos!</h1>
+            <p>Únete a cualquier grupo de la ciudad de Santa Cruz, encuentra información sobre compra y venta, y descubre los mejores lugares turísticos.</p>
+        </div>
+
+        <div class="section">
+            <h2>Unirse a Grupos</h2>
+            <p>Conéctate con personas que comparten tus intereses. Únete a grupos de deportes, música, arte, tecnología y más.</p>
+            <ul>
+                <li>Grupo de Música - Conciertos, intercambios y más</li>
+                <li>Grupo de Tecnología - Meetups, talleres y eventos</li>
+                <li>Grupo de Deportes - Partidos, torneos y entrenamientos</li>
+                <!-- Agrega más grupos según sea necesario -->
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Compra y Venta</h2>
+            <p>Encuentra las mejores ofertas y publica tus productos para vender. Desde electrónicos hasta ropa, aquí lo tienes todo.</p>
+            <ul>
+                <li>Electrónicos - Teléfonos, computadoras y más</li>
+                <li>Ropa y accesorios - Moda para todas las edades</li>
+                <li>Hogar y jardín - Muebles, herramientas y decoraciones</li>
+                <!-- Agrega más categorías según sea necesario -->
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Lugares Turísticos</h2>
+            <p>Descubre los lugares más impresionantes de Santa Cruz. Desde parques naturales hasta monumentos históricos.</p>
+            <ul>
+                <li>Parque Nacional Amboró - Naturaleza en su máximo esplendor</li>
+                <li>Plaza 24 de Septiembre - El corazón de la ciudad</li>
+                <li>Jardín Botánico - Un oasis de tranquilidad</li>
+                <!-- Agrega más lugares según sea necesario -->
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <footer>
+        <p>&copy; 2024 La Voz de Santa Cruz. Todos los derechos reservados.</p>
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>

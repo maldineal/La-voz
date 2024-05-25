@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <style>
+        /* Estilos generales para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Estilos para el contenedor del formulario de registro */
+        .register-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        /* Estilos para el título del formulario */
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para el formulario */
+        .register-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilos para los campos de entrada */
+        .register-form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Estilos para el botón de registro */
+        .register-form button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Estilos específicos para el botón de registro */
+        .register-button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Estilos para el botón de registro al pasar el ratón */
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilos para los botones sociales */
+        .social-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        /* Estilos específicos para el botón de Facebook */
+        .facebook-button {
+            background-color: #3b5998;
+        }
+
+        /* Estilos para el botón de Facebook al pasar el ratón */
+        .facebook-button:hover {
+            background-color: #2d4373;
+        }
+
+        /* Estilos específicos para el botón de Google */
+        .google-button {
+            background-color: #db4437;
+        }
+
+        /* Estilos para el botón de Google al pasar el ratón */
+        .google-button:hover {
+            background-color: #c23321;
+        }
+
+        /* Estilos para el enlace de inicio de sesión */
+        .register-form .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Estilos para el enlace de inicio de sesión */
+        .register-form .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Estilos para el enlace de inicio de sesión al pasar el ratón */
+        .register-form .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para los iconos de los botones sociales */
+        .icon {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal del formulario de registro -->
+    <div class="register-container">
+        <!-- Título del formulario -->
+        <h2>Registro</h2>
+        <!-- Formulario de registro -->
+        <form class="register-form">
+            <!-- Campo de entrada para el nombre de usuario -->
+            <input type="text" placeholder="Nombre de usuario" required>
+            <!-- Campo de entrada para el correo electrónico -->
+            <input type="email" placeholder="Correo electrónico" required>
+            <!-- Campo de entrada para la contraseña -->
+            <input type="password" placeholder="Contraseña" required>
+            <!-- Campo de entrada para confirmar la contraseña -->
+            <input type="password" placeholder="Confirmar contraseña" required>
+            <!-- Botón para registrarse -->
+            <button type="submit" class="register-button">Registrarse</button>
+            <!-- Botón para registrarse con Facebook -->
+            <button type="button" class="social-button facebook-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="icon" width="16" height="16">
+                Registrarse con Facebook
+            </button>
+            <!-- Botón para registrarse con Google -->
+            <button type="button" class="social-button google-button">
+                <img src="imagenes/gmail.png" alt="Google" class="icon" width="16" height="16">                Registrarse con Google
+            </button>
+            <!-- Enlace para iniciar sesión si ya se tiene una cuenta -->
+            <div class="login-link">
+                ¿Ya tienes una cuenta? <a href="#">Inicia sesión aquí</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

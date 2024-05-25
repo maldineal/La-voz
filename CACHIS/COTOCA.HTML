@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+
+    <title>Municipio de Cotoca</title>
+
+
+   <link rel= "shortcut icon"  type= "imagen/x-icon" href="imagenes/bandera.jpg">
+  <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+
+           /* cambia el color al fondo del inicio 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+       
+           /* cambia de color al cursor al pocicionar en inicio producto, noticia      000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+            background-color: white;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .navbar img {
+            float: left;
+            display: block;
+            height: 50px;
+            width: 50px;
+            margin: 5px 15px 5px 5px;
+        }
+
+        .productos-populares {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+      
+  
+/* Con esto podemos modificar el tamaño de ancho y largo de las imagenes grande portada */
+    .slider {
+  position: relative;
+  width:301%;
+  height: 95vh;
+  overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .slides img {
+      width: 100vw;
+      height: 95vh;
+      object-fit: cover;
+    }
+
+        /* Estilos para pie de pagina00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+             padding: 0px 500px;
+             display: block;
+             font-size: 11px;
+
+        }
+
+    </style>
+</head>
+
+<body><div class="navbar">
+    <a class="active" href="file:///C:/Users/Maldine/Desktop/CACHIS/La%20Voz.HTML">Inicio</a>
+    <a href="file:///C:/Users/Maldine/Desktop/CACHIS/MUNICIPIO%20DE%20SANTA%20CRUZ.HTML#home">Municipios de Santa cruz</a>
+    <a href="#contacto">Contacto</a>
+    <a href="file:///C:/Users/Maldine/Desktop/CACHIS/REGISTRO.HTML?#">Registro</a>
+</div>
+
+
+ <div class="slider">
+  <div class="slides">
+   
+    <img src="imagenes/municipiodecuatro.jpg" alt="Imagen 1">
+    <img src="imagenes/bolivia1.jpg" alt="Imagen 2">
+    <img src="imagenes/municipiodecuatro.jpg" alt="Imagen 3">
+ 
+ </div>
+
+   <div class="navigation">
+      <button class="nav-btn"></button>
+      <button class="nav-btn"></button>
+      <button class="nav-btn"></button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const navButtons = document.querySelectorAll('.nav-btn');
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.slides img').length;
+
+    function updateSlide(index) {
+      slides.style.transform = `translateX(${-index * 100}vw)`;
+      navButtons.forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
+      });
+    }
+
+    function showNextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateSlide(currentIndex);
+    }
+
+    navButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlide(currentIndex);
+      });
+    });
+
+    // Inicializa el primer slide como activo
+    updateSlide(currentIndex);
+
+    // Cambia de imagen automáticamente cada 3 segundos00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    setInterval(showNextSlide, 3000);
+  </script>
+
+    <div class="productos-populares">
+
+        <h2>MUNICIPIOS DE COTOCA</h2>
+
+
+    <footer>
+        <p>&copy; 2024 La Voz de Santa Cruz. Todos los derechos reservados.</p>
+    </footer>
+
+
+
+</body>
+</html>
